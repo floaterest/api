@@ -1,0 +1,7 @@
+{
+    "functions": {
+        "api/counter/[user].ts": {
+            "includeFiles": "../../assets/**"
+        }
+    }
+}
