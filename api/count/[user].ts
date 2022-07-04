@@ -6,7 +6,7 @@ import { client } from '../../src/count/dynamo';
 import { DIGIT, PREVIEW } from '../../src/count/constants';
 import { generate } from '../../src/count/svg';
 
-const assets = path.resolve(__dirname, '../../assets/count');
+import { assets } from './index';
 
 const params = user => ({
 	TableName: 'count',
@@ -22,10 +22,8 @@ const params = user => ({
 
 export default async function(req: VercelRequest, res: VercelResponse){
 	const { user, digit } = req.query;
-	const count = user === PREVIEW
-		? 1234567890
-		: (await client.update(params(user)).promise()).Attributes.count;
+	const item = await client.update(params(user)).promise();
 	res.setHeader('content-type', 'image/svg+xml');
 	res.setHeader('cache-control', 'max-age=0, no-cache, no-store, must-revalidate');
-	res.status(200).send(await generate(count, +digit || DIGIT, assets));
+	res.status(200).send(await generate(item.Attributes.count, +digit || DIGIT, assets));
 }
