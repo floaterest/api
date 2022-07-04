@@ -1,7 +1,13 @@
 {
     "functions": {
-        "api/counter/[user].ts": {
-            "includeFiles": "../../assets/**"
+        "api/count/[user].ts": {
+            "includeFiles": "../../assets/count/**"
         }
-    }
+    },
+    "redirects": [
+        {
+            "source": "/api/count/",
+            "destination": "/api/count/preview"
+        }
+    ]
 }
