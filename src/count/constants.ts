@@ -32,7 +32,5 @@ export const THEMES: { [id: string]: Theme } = {
 	},
 };
 
-/// number of digits to display (not for preview)
+/// min number of digits to display (not for preview)
 export const DIGIT = 7;
-/// test user
-export const PREVIEW='preview';

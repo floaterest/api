@@ -1,9 +1,8 @@
-import * as path from 'path';
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import { DynamoDB } from 'aws-sdk/clients/browser_default';
 
 import { client } from '../../src/count/dynamo';
-import { DIGIT, PREVIEW } from '../../src/count/constants';
+import { DIGIT } from '../../src/count/constants';
 import { generate } from '../../src/count/svg';
 
 import { assets } from './index';
