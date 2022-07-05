@@ -1,2 +1,2 @@
 # API
-> list of APIs I have on Vercel
+> some serverless functions I have on vercel
