@@ -7,7 +7,7 @@ import { generate } from '../../src/count/svg';
 
 import { assets } from './index';
 
-const params = user => ({
+const params = (user: string) => ({
 	TableName: 'count',
 	Key: { user },
 	UpdateExpression: 'set #count = if_not_exists(#count, :zero) + :one',
@@ -21,8 +21,8 @@ const params = user => ({
 
 export default async function(req: VercelRequest, res: VercelResponse){
 	const { user, digit } = req.query;
-	const item = await client.update(params(user)).promise();
+	const item = await client.update(params(user as string)).promise();
 	res.setHeader('content-type', 'image/svg+xml');
 	res.setHeader('cache-control', 'max-age=0, no-cache, no-store, must-revalidate');
-	res.status(200).send(await generate(item.Attributes.count, +digit || DIGIT, assets));
+	res.status(200).send(await generate(item.Attributes?.count, +digit || DIGIT, assets));
 }
