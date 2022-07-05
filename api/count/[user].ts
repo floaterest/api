@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { DynamoDB } from 'aws-sdk/clients/browser_default';
+import { DynamoDB } from 'aws-sdk';
 
 import { client } from '../../src/count/dynamo';
 import { DIGIT } from '../../src/count/constants';
