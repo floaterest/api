@@ -8,6 +8,10 @@
         {
             "source": "/api/",
             "destination": "https://github.com/floaterest/api"
+        },
+        {
+            "source": "/",
+            "destination": "https://github.com/floaterest/api"
         }
     ]
 }
