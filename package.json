@@ -2,7 +2,7 @@
     "name": "api",
     "version": "0.0.0",
     "private": true,
-    "devDependencies": {
+    "dependencies": {
         "@vercel/node": "^1.11.1",
         "aws-sdk": "^2.1135.0",
         "ts-node": "^8.9.1",
