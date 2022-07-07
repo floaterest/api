@@ -3,15 +3,5 @@
         "api/count/[user].ts": {
             "includeFiles": "../../assets/count/**"
         }
-    },
-    "redirects": [
-        {
-            "source": "/api/",
-            "destination": "https://github.com/floaterest/api"
-        },
-        {
-            "source": "/",
-            "destination": "https://github.com/floaterest/api"
-        }
-    ]
+    }
 }
